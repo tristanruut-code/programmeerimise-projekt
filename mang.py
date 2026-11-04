@@ -11,8 +11,8 @@ class Mang:
 
         pygame.display.set_caption("Mäng")
 
-        self.ekraan = pygame.display.set_mode((640, 480))
-        self.kuva = pygame.Surface((320, 240))
+        self.ekraan = pygame.display.set_mode((640*2, 360*2))
+        self.kuva = pygame.Surface((320, 180))
         self.kell = pygame.time.Clock()
         self.liikumine = [False, False] 
 
@@ -22,7 +22,6 @@ class Mang:
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
             "mangija": lae_pilt("mängija/art/paigal_seisev/Sprite-0003.png")
         }
-        #self.pilt = pygame.image.load("tee_failini")
 
         self.ruudu_kaart = Ruudukaart(self, ruudu_suurus=16)
         self.mangija = Fyysika(self, 'mängija', (50, 50), (16, 32))
@@ -45,8 +44,8 @@ class Mang:
                         self.liikumine[1] = False
             
             # Aseta renderimis jerjekorras asjad, taust koige enne ja asjad selle peale, jne.
-            self.ekraan.fill((20, 20, 30))
-            self.ruudu_kaart.render(self.ekraan)
+            self.kuva.fill((20, 20, 30))
+            self.ruudu_kaart.render(self.kuva)
 
             self.mangija.update((self.liikumine[1] - self.liikumine[0], 0))
             self.mangija.esitus(self.ekraan)
