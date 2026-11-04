@@ -33,6 +33,7 @@ class Mang:
             self.kuva.fill((20, 20, 30))
             self.ruudu_kaart.render(self.kuva)
 
+            # Ekraani zoom
             self.ekraan.blit(pygame.transform.scale(self.kuva, self.ekraan.get_size()), (0, 0))
 
             pygame.display.update()
