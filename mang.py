@@ -1,5 +1,6 @@
 import sys
 import pygame
+from mängija.skript.mängija import Fyysika
 
 from koodifailid.kommud import lae_pilt, lae_pildid
 from koodifailid.ruudukaart import  Ruudukaart
@@ -13,14 +14,17 @@ class Mang:
         self.ekraan = pygame.display.set_mode((640*2, 360*2))
         self.kuva = pygame.Surface((320, 180))
         self.kell = pygame.time.Clock()
+        self.liikumine = [False, False] 
 
         self.varad = {
             #"dekoratsioonid": lae_pildid("tee_piltideni") # dekoratsioonide jaoks
             "korter_punane": lae_pildid("keskkond/korterid/punane"), # korterite ruudud
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
+            "mangija": lae_pilt("mängija/art/paigal_seisev/Sprite-0003.png")
         }
 
         self.ruudu_kaart = Ruudukaart(self, ruudu_suurus=16)
+        self.mangija = Fyysika(self, 'mängija', (50, 50), (16, 32))
     
     def kaivita(self):
         while True:
@@ -28,13 +32,30 @@ class Mang:
                 if sundmus.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if sundmus.type == pygame.KEYDOWN:
+                    if sundmus.key == pygame.K_LEFT:
+                        self.liikumine[0] = True
+                    if sundmus.key == pygame.K_RIGHT:
+                        self.liikumine[1] = True
+                if sundmus.type == pygame.KEYUP:
+                    if sundmus.key == pygame.K_LEFT:
+                        self.liikumine[0] = False
+                    if sundmus.key == pygame.K_RIGHT:
+                        self.liikumine[1] = False
             
             # Aseta renderimis jerjekorras asjad, taust koige enne ja asjad selle peale, jne.
             self.kuva.fill((20, 20, 30))
             self.ruudu_kaart.render(self.kuva)
 
-            # Ekraani zoom
-            self.ekraan.blit(pygame.transform.scale(self.kuva, self.ekraan.get_size()), (0, 0))
+            self.mangija.update((self.liikumine[1] - self.liikumine[0], 0))
+            self.mangija.esitus(self.ekraan)
+            
+
+
+            self.mangija.esitus(self.ekraan)
+
+            self.kuva.blit(pygame.transform.scale(self.ekraan, self.kuva.get_size()), (0, 0))
+
 
             pygame.display.update()
             self.kell.tick(60)
