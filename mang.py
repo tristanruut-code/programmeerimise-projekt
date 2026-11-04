@@ -10,12 +10,13 @@ class Mang:
 
         pygame.display.set_caption("Mäng")
 
-        self.ekraan = pygame.display.set_mode((640, 420))
+        self.ekraan = pygame.display.set_mode((640, 480))
+        self.kuva = pygame.Surface((320, 240))
         self.kell = pygame.time.Clock()
 
         self.varad = {
             #"dekoratsioonid": lae_pildid("tee_piltideni") # dekoratsioonide jaoks
-            "korterid": lae_pildid("keskkond/korterid"), # korterite ruudud
+            "korter_punane": lae_pildid("keskkond/korterid/punane"), # korterite ruudud
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
         }
         #self.pilt = pygame.image.load("tee_failini")
@@ -29,11 +30,11 @@ class Mang:
                     pygame.quit()
                     sys.exit()
             
-
             # Aseta renderimis jerjekorras asjad, taust koige enne ja asjad selle peale, jne.
             self.ekraan.fill((20, 20, 30))
-
             self.ruudu_kaart.render(self.ekraan)
+
+            self.kuva.blit(pygame.transform.scale(self.ekraan, self.kuva.get_size()), (0, 0))
 
             pygame.display.update()
             self.kell.tick(60)
