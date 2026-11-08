@@ -1,0 +1,9 @@
+# Level editor controls:
+WASD -> liigud
+CTRL + S -> salvesta (ei näita kuskil aga trust see töötab)
+G -> offgrid/ongrid toggle
+T -> auto tile (lisab ise 9x9 blockid korteritele, ehk nt korteri ääred, pealmise ja alumise osa + keskmise bloki)
+LMB -> place
+RMB -> delete
+MOUSE SCROLL -> vahetad tüüpide vahel
+SHIFT + MOUSE SCROLL -> vahetad ühe tüübi variantide vahel
