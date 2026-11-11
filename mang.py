@@ -12,19 +12,26 @@ class Mang:
         pygame.display.set_caption("Mäng")
 
         self.ekraan = pygame.display.set_mode((640*2, 360*2))
-        self.kuva = pygame.Surface((320, 180))
+        self.kuva = pygame.Surface((480, 270))
         self.kell = pygame.time.Clock()
         self.liikumine = [False, False] 
 
         self.varad = {
             #"dekoratsioonid": lae_pildid("tee_piltideni") # dekoratsioonide jaoks
             "korter_punane": lae_pildid("keskkond/korterid/punane"), # korterite ruudud
+            "korter_sinine": lae_pildid("keskkond/korterid/sinine"),
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
             "mangija": lae_pilt("mängija/vara/paigal_seisev/Sprite-0003.png")
         }
 
         self.ruudu_kaart = Ruudukaart(self, ruudu_suurus=16)
         self.mangija = Fyysika(self, 'mängija', (50, 50), (16, 32))
+
+        self.ruudu_kaart = Ruudukaart(self, ruudu_suurus=16)
+        try:
+            self.ruudu_kaart.lae("linn.json")
+        except FileNotFoundError:
+            pass
     
     def kaivita(self):
         while True:
@@ -48,13 +55,10 @@ class Mang:
             self.ruudu_kaart.render(self.kuva)
 
             self.mangija.update((self.liikumine[1] - self.liikumine[0], 0))
-            self.mangija.esitus(self.ekraan)
+            self.mangija.esitus(self.kuva)
             
 
-
-            self.mangija.esitus(self.ekraan)
-
-            self.kuva.blit(pygame.transform.scale(self.ekraan, self.kuva.get_size()), (0, 0))
+            self.ekraan.blit(pygame.transform.scale(self.kuva, self.ekraan.get_size()), (0, 0))
 
 
             pygame.display.update()

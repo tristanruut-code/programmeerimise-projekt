@@ -104,7 +104,7 @@ class Ruudukaart:
 
     def render(self, pind, nihe=(0, 0)):
         for ruut in self.vabad_ruudud:
-            pind.blit(self.mang.varad[ruut["tuup"]][ruut["variant"]], ruut["pos"])
+            pind.blit(self.mang.varad[ruut["tuup"]][ruut["variant"]], (ruut["pos"][0] - nihe[0], ruut["pos"][1] - nihe[1]))
         
         for x in range(nihe[0] // self.ruudu_suurus, (nihe[0] + pind.get_width()) // self.ruudu_suurus + 1):
             for y in range(nihe[1] // self.ruudu_suurus, (nihe[1] + pind.get_height()) // self.ruudu_suurus + 1):
