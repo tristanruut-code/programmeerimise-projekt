@@ -56,7 +56,7 @@ class Ruudukaart:
         self.ruudu_kaart = {}
         self.vabad_ruudud = []
 
-    def ruudud_umberingi(self, pos):
+    def ruudud_umberringi(self, pos):
         ruudud = []
         ruudu_koht = (int(pos[0] // self.ruudu_suurus)), (int(pos[1] // self.ruudu_suurus))
         for nihe in NAABER_NIHE:
@@ -79,7 +79,7 @@ class Ruudukaart:
 
     def fuusilised_ruudud_umberringi(self, pos):
         ruudud = []
-        for ruut in self.ruudud_umberingi(pos):
+        for ruut in self.ruudud_umberringi(pos):
             if ruut["tuup"] in FUUSILISED_RUUDUD:
                 ruudud.append(pygame.Rect(ruut["pos"][0] * self.ruudu_suurus, ruut["pos"][1] * self.ruudu_suurus, self.ruudu_suurus, self.ruudu_suurus))
         return ruudud
@@ -103,15 +103,16 @@ class Ruudukaart:
             ruut["variant"] = variandi_fn(naabrid)
 
     def render(self, pind, nihe=(0, 0)):
+        nihe_x, nihe_y = int(nihe[0]), int(nihe[1])
         for ruut in self.vabad_ruudud:
-            pind.blit(self.mang.varad[ruut["tuup"]][ruut["variant"]], (ruut["pos"][0] - nihe[0], ruut["pos"][1] - nihe[1]))
+            pind.blit(self.mang.varad[ruut["tuup"]][ruut["variant"]], (ruut["pos"][0] - nihe_x, ruut["pos"][1] - nihe_y))
         
-        for x in range(nihe[0] // self.ruudu_suurus, (nihe[0] + pind.get_width()) // self.ruudu_suurus + 1):
-            for y in range(nihe[1] // self.ruudu_suurus, (nihe[1] + pind.get_height()) // self.ruudu_suurus + 1):
+        for x in range(nihe_x // self.ruudu_suurus, (nihe_x + pind.get_width()) // self.ruudu_suurus + 1):
+            for y in range(nihe_y // self.ruudu_suurus, (nihe_y + pind.get_height()) // self.ruudu_suurus + 1):
                 asukoht = str(x) + ";" + str(y)
                 if asukoht in self.ruudu_kaart:
                     ruut = self.ruudu_kaart[asukoht]
                     pind.blit(
                         self.mang.varad[ruut["tuup"]][ruut["variant"]],
-                        (ruut["pos"][0] * self.ruudu_suurus - nihe[0], ruut["pos"][1] * self.ruudu_suurus - nihe[1]),
+                        (ruut["pos"][0] * self.ruudu_suurus - nihe_x, ruut["pos"][1] * self.ruudu_suurus - nihe_y),
                     )
