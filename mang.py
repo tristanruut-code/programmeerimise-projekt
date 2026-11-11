@@ -20,7 +20,7 @@ class Mang:
             #"dekoratsioonid": lae_pildid("tee_piltideni") # dekoratsioonide jaoks
             "korter_punane": lae_pildid("keskkond/korterid/punane"), # korterite ruudud
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
-            "mangija": lae_pilt("mängija/art/paigal_seisev/Sprite-0003.png")
+            "mangija": lae_pilt("mängija/vara/paigal_seisev/Sprite-0003.png")
         }
 
         self.ruudu_kaart = Ruudukaart(self, ruudu_suurus=16)
