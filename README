@@ -1,9 +1,12 @@
-# Level editor controls:
-WASD -> liigud
-CTRL + S -> salvesta (ei näita kuskil aga trust see töötab)
-G -> offgrid/ongrid toggle
-T -> auto tile (lisab ise 9x9 blockid korteritele, ehk nt korteri ääred, pealmise ja alumise osa + keskmise bloki)
-LMB -> place
-RMB -> delete
-MOUSE SCROLL -> vahetad tüüpide vahel
-SHIFT + MOUSE SCROLL -> vahetad ühe tüübi variantide vahel
+Kuidas senine koostöö sujunud? Kuidas on rollid jagatud?
+Praegune koostöö on sujunud väga hästi, probleeme tekkinud ei ole. Otseselt rollipõhist jaotust ei ole. Meil on projekt jaotatud ülesanneteks mis hõlmavad nii kunsti kui ka kodeerimist. Mõlemad tegelevad nii kunksti kui ka kodeerimisega.
+
+Kui palju aega projektile on kulunud?
+Mõlemad oleme tegelenud projektiga ~12h
+
+Millised on projektiga seoses edasised plaanid ja edasiarendused?
+Praegune plaan on keskkond lõpuni teha. Lisada effekte, taustahelisid ning liiguv taust.
+
+
+Kirjutage milleks tehisaru kasutasite, millised programmiosad on selle abiga loodud, mida pidite parandama või muutma ning mida õppisite.
+Tehisaru on kasutatud selles projektis debug'imiseks, enamusajast nimetusvigade otsimisele, mis kiirendas tüütute vigade leidmise protsessi.
