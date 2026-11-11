@@ -46,7 +46,7 @@ AUTO_TUUBID = {
 }
 
 NAABER_NIHE = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1), (0, 1), (1, 1)]
-FUUSILISED_RUUDUD = {"tee", "korter_punane", "korter_sinine"} # Ruudu tyyp mida me tahame et oleks collisioniga
+FUUSILISED_RUUDUD = {"tee", "korter_punane", "korter_sinine", "veetorn_fuusiline"} # Ruudu tyyp mida me tahame et oleks collisioniga
 AUTO_PAIGUTAMISE_RUUDUD = {"tee", "korter_punane", "korter_sinine"}
 
 class Ruudukaart:

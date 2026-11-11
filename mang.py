@@ -59,8 +59,6 @@ class Mang:
             
 
             self.ekraan.blit(pygame.transform.scale(self.kuva, self.ekraan.get_size()), (0, 0))
-
-
             pygame.display.update()
             self.kell.tick(60)
 

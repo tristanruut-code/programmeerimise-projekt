@@ -18,6 +18,8 @@ class LevelTegija:
             "korter_punane": lae_pildid("keskkond/korterid/punane"),
             "korter_sinine": lae_pildid("keskkond/korterid/sinine"), # korterite ruudud
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
+            "veetorn": lae_pildid("keskkond/propid/veetorn"),
+            "veetorn_fuusiline": lae_pildid("keskkond/propid/veetorn/fuusiline"),
         }
 
         self.liikumine = [False, False, False, False]
@@ -139,7 +141,6 @@ class LevelTegija:
             self.kuva.blit(praegune_ruudu_pilt, (5, 5))
 
             self.ekraan.blit(pygame.transform.scale(self.kuva, self.ekraan.get_size()), (0, 0))
-
             pygame.display.update()
             self.kell.tick(60)
 
