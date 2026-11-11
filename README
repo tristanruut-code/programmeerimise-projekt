@@ -1,12 +1,12 @@
 Kuidas senine koostöö sujunud? Kuidas on rollid jagatud?
-Praegune koostöö on sujunud väga hästi, probleeme tekkinud ei ole. Otseselt rollipõhist jaotust ei ole. Meil on projekt jaotatud ülesanneteks mis hõlmavad nii kunsti kui ka kodeerimist. Mõlemad tegelevad nii kunksti kui ka kodeerimisega.
+Praegune koostöö on sujunud väga hästi, probleeme tekkinud ei ole. Otseselt rollipõhist jaotust ei ole. Meil on projekt jaotatud ülesanneteks, mis hõlmavad nii kunsti kui ka kodeerimist. Mõlemad tegelevad nii kunksti kui ka kodeerimisega.
 
 Kui palju aega projektile on kulunud?
-Mõlemad oleme tegelenud projektiga ~12h
+Mõlemad oleme tegelenud projektiga ise ~12h, seega kokku 24h.
 
 Millised on projektiga seoses edasised plaanid ja edasiarendused?
-Praegune plaan on keskkond lõpuni teha. Lisada effekte, taustahelisid ning liiguv taust.
+Praegune plaan on keskkond lõpuni teha. Lisada efekte, taustahelisid ning liikuv taust.
 
 
 Kirjutage milleks tehisaru kasutasite, millised programmiosad on selle abiga loodud, mida pidite parandama või muutma ning mida õppisite.
-Tehisaru on kasutatud selles projektis debug'imiseks, enamusajast nimetusvigade otsimisele, mis kiirendas tüütute vigade leidmise protsessi.
+Tehisaru on kasutatud selles projektis debug'imiseks, enamusajast nimetusvigade otsimisele, mis kiirendas tüütute vigade leidmise protsessi. Kuna osad nimetused on inglise keeles ja osad eesti, siis võis kohati minna muutujad või funktsioonid sassi. Tehisaru ei saa hakkama täielikult koodi mõistmisega, võib-olla kohati, sest keeled on erinevad. Parim kasutus polnudki funktsionaalse poole pealt, vaid syntax vigade ja kirjavigade leidmiseks.
