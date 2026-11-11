@@ -7,6 +7,5 @@ Mõlemad oleme tegelenud projektiga ise ~12h, seega kokku 24h.
 Millised on projektiga seoses edasised plaanid ja edasiarendused?
 Praegune plaan on keskkond lõpuni teha. Lisada efekte, taustahelisid ning liikuv taust.
 
-
 Kirjutage milleks tehisaru kasutasite, millised programmiosad on selle abiga loodud, mida pidite parandama või muutma ning mida õppisite.
 Tehisaru on kasutatud selles projektis debug'imiseks, enamusajast nimetusvigade otsimisele, mis kiirendas tüütute vigade leidmise protsessi. Kuna osad nimetused on inglise keeles ja osad eesti, siis võis kohati minna muutujad või funktsioonid sassi. Tehisaru ei saa hakkama täielikult koodi mõistmisega, võib-olla kohati, sest keeled on erinevad. Parim kasutus polnudki funktsionaalse poole pealt, vaid syntax vigade ja kirjavigade leidmiseks.
