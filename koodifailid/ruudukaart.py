@@ -17,7 +17,8 @@ KORTER_KAART = {
 # variandid, mis ei loe seina naabriks (rõdu piire jne)
 EI_NAABER = {
     "korter_punane": {10, 11},
-    "korter_sinine": {11},
+    "korter_sinine": {10, 11},
+    "korter_klaas": {11},
 }
 
 def korter_variant(naabrid):
@@ -42,12 +43,13 @@ def tee_variant(naabrid):
 AUTO_TUUBID = {
     "korter_punane": (korter_variant, 4),
     "korter_sinine": (korter_variant, 9),
+    "korter_klaas": (korter_variant, 9),
     "tee": (tee_variant, 6),
 }
 
 NAABER_NIHE = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (0, 0), (-1, 1), (0, 1), (1, 1)]
-FUUSILISED_RUUDUD = {"tee", "korter_punane", "korter_sinine", "veetorn_fuusiline"} # Ruudu tyyp mida me tahame et oleks collisioniga
-AUTO_PAIGUTAMISE_RUUDUD = {"tee", "korter_punane", "korter_sinine"}
+FUUSILISED_RUUDUD = {"tee", "korter_punane", "korter_sinine", "korter_klaas", "veetorn_fuusiline", "tootorn_fuusiline"} # Ruudu tyyp mida me tahame et oleks collisioniga
+AUTO_PAIGUTAMISE_RUUDUD = {"tee", "korter_punane", "korter_sinine", "korter_klaas"}
 
 class Ruudukaart:
     def __init__(self, mang, ruudu_suurus=16):
