@@ -17,9 +17,12 @@ class LevelTegija:
         self.varad = {
             "korter_punane": lae_pildid("keskkond/korterid/punane"),
             "korter_sinine": lae_pildid("keskkond/korterid/sinine"), # korterite ruudud
+            "korter_klaas": lae_pildid("keskkond/korterid/klaas"),
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
             "veetorn": lae_pildid("keskkond/propid/veetorn"),
             "veetorn_fuusiline": lae_pildid("keskkond/propid/veetorn/fuusiline"),
+            "propid": lae_pildid("keskkond/propid"),
+            "tootorn_fuusiline": lae_pildid("keskkond/propid/fuusiline"),
         }
 
         self.liikumine = [False, False, False, False]
@@ -105,8 +108,8 @@ class LevelTegija:
             # Aseta renderimis jerjekorras asjad, taust koige enne ja asjad selle peale, jne.
             self.kuva.fill((255, 255, 255))
 
-            self.kerimine[0] += (self.liikumine[1] - self.liikumine[0]) * 4
-            self.kerimine[1] += (self.liikumine[3] - self.liikumine[2]) * 4
+            self.kerimine[0] += (self.liikumine[1] - self.liikumine[0]) * 6
+            self.kerimine[1] += (self.liikumine[3] - self.liikumine[2]) * 6
             render_kerimine = (int(self.kerimine[0]), int(self.kerimine[1]))
 
             self.ruudu_kaart.render(self.kuva, nihe=self.kerimine)
