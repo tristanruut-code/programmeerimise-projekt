@@ -9,7 +9,9 @@ def lae_pilt(tee):
 def lae_pildid(tee):
     pildid = []
     for pildi_nimi in sorted(os.listdir(tee)):
-        pildid.append(lae_pilt(tee + "/" + pildi_nimi))
+        taielik_tee = tee + "/" + pildi_nimi
+        if os.path.isfile(taielik_tee):
+            pildid.append(lae_pilt(taielik_tee))
     return pildid
 
 class Animatsioon:

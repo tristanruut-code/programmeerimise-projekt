@@ -11,7 +11,7 @@ class Mang:
         pygame.display.set_caption("Mäng")
 
         self.ekraan = pygame.display.set_mode((640*2, 360*2))
-        self.kuva = pygame.Surface((480, 270))
+        self.kuva = pygame.Surface((320, 180))
         self.kell = pygame.time.Clock()
         self.liikumine = [False, False] 
 
@@ -19,7 +19,12 @@ class Mang:
             #"dekoratsioonid": lae_pildid("tee_piltideni") # dekoratsioonide jaoks
             "korter_punane": lae_pildid("keskkond/korterid/punane"), # korterite ruudud
             "korter_sinine": lae_pildid("keskkond/korterid/sinine"),
+            "korter_klaas": lae_pildid("keskkond/korterid/klaas"),
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
+            "veetorn": lae_pildid("keskkond/propid/veetorn"),
+            "veetorn_fuusiline": lae_pildid("keskkond/propid/veetorn/fuusiline"),
+            "propid": lae_pildid("keskkond/propid"),
+            "tootorn_fuusiline": lae_pildid("keskkond/propid/fuusiline"),
             "mangija": lae_pilt("mängija/vara/paigal_seisev/Sprite-0003.png"),
             "mangija/paigal_seisev": Animatsioon(lae_pildid("mängija/vara/paigal_seisev"), pilt_kestus=6),
             "mangija/kõndimine": Animatsioon(lae_pildid("mängija/vara/kõndimine"), pilt_kestus=6),
@@ -46,19 +51,20 @@ class Mang:
                     pygame.quit()
                     sys.exit()
                 if sundmus.type == pygame.KEYDOWN:
-                    if sundmus.key == pygame.K_LEFT:
+                    if sundmus.key == pygame.K_a:
                         self.liikumine[0] = True
-                    if sundmus.key == pygame.K_RIGHT:
+                    if sundmus.key == pygame.K_d:
                         self.liikumine[1] = True
-                    if sundmus.key == pygame.K_UP:
-                        self.mangija.kiirus[1] = -3
+                    if sundmus.key == pygame.K_w:
+                        self.mangija.kiirus[1] = -3.5
                 if sundmus.type == pygame.KEYUP:
-                    if sundmus.key == pygame.K_LEFT:
+                    if sundmus.key == pygame.K_a:
                         self.liikumine[0] = False
-                    if sundmus.key == pygame.K_RIGHT:
+                    if sundmus.key == pygame.K_d:
                         self.liikumine[1] = False
             
             # Aseta renderimis jerjekorras asjad, taust koige enne ja asjad selle peale, jne.
+            self.kuva.fill((50, 58, 94))
             self.kuva.fill((135, 206, 250))
             self.ruudu_kaart.render(self.kuva, nihe=self.kerimine)
 
