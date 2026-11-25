@@ -96,6 +96,8 @@ class Fyysika:
         #pind.blit(self.mang.varad["mangija"], (self.pos[0] - nihe_x, self.pos[1] - nihe_y))
 
 
+
+
 class Mangija(Fyysika):
     KONDISE_KUNI_JOOKS = 20
     KONDI_KIIRUS = 1
@@ -105,11 +107,13 @@ class Mangija(Fyysika):
         super().__init__(mang, "mangija", pos, suurus)
         self.ohu_aeg = 0
         self.liikumise_aeg = 0
+        self.meditatsioon = False
 
 
     def update(self, liikumine=(0, 0)):
         if liikumine[0] != 0:
             self.liikumise_aeg += 1
+            self.meditatsioon = False
         else:
             self.liikumise_aeg = 0
 
@@ -130,5 +134,7 @@ class Mangija(Fyysika):
                 self.lisa_tegevus('jooksmine')
             else:
                 self.lisa_tegevus('kõndimine')
+        elif self.meditatsioon:
+            self.lisa_tegevus('palvetamine')
         else:
             self.lisa_tegevus('paigal_seisev')

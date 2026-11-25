@@ -30,6 +30,11 @@ class Mang:
             "mangija/kõndimine": Animatsioon(lae_pildid("mängija/vara/kõndimine"), pilt_kestus=6),
             "mangija/jooksmine": Animatsioon(lae_pildid("mängija/vara/jooksmine"), pilt_kestus=4),
             "mangija/hüppamine": Animatsioon(lae_pildid("mängija/vara/hüppamine"), pilt_kestus=10),
+            "mangija/palvetamine": Animatsioon(
+                [lae_pilt(f"mängija/vara/palvetamine/praying{i}.png") for i in range(1, 15)],
+                pilt_kestus=6,
+                loop=False,
+            ),
 
         }
 
@@ -57,6 +62,8 @@ class Mang:
                         self.liikumine[1] = True
                     if sundmus.key == pygame.K_w:
                         self.mangija.kiirus[1] = -3.5
+                    if sundmus.key == pygame.K_m:
+                        self.mangija.meditatsioon = True
                 if sundmus.type == pygame.KEYUP:
                     if sundmus.key == pygame.K_a:
                         self.liikumine[0] = False
