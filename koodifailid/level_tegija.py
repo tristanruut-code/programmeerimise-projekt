@@ -18,8 +18,8 @@ class LevelTegija:
             "korter_punane": lae_pildid("keskkond/korterid/punane"),
             "korter_sinine": lae_pildid("keskkond/korterid/sinine"), # korterite ruudud
             "tee": lae_pildid("keskkond/tee"), # tee erinevad ruudud
-            "veetorn": lae_pildid("keskkond/propid/veetorn"),
-            "veetorn_fuusiline": lae_pildid("keskkond/propid/veetorn/fuusiline"),
+            #"veetorn": lae_pildid("keskkond/propid/veetorn"),
+            #"veetorn_fuusiline": lae_pildid("keskkond/propid/veetorn/fuusiline"),
         }
 
         self.liikumine = [False, False, False, False]

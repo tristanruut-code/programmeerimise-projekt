@@ -59,7 +59,7 @@ class Mang:
                         self.liikumine[1] = False
             
             # Aseta renderimis jerjekorras asjad, taust koige enne ja asjad selle peale, jne.
-            self.kuva.fill((120, 120, 120))
+            self.kuva.fill((135, 206, 250))
             self.ruudu_kaart.render(self.kuva, nihe=self.kerimine)
 
             self.kerimine[0] += (self.mangija.rect().centerx - self.kuva.get_width() / 2 - self.kerimine[0]) / 30
